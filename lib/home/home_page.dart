@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
                   height: 150,
                   width: 150,
                   padding: const EdgeInsets.all(16),
-                  child: const Text('Example'),
+                  child: const Text('Example2'),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class HomePage extends StatelessWidget {
                   height: 150,
                   width: 150,
                   padding: const EdgeInsets.all(16),
-                  child: const Text('Example'),
+                  child: const Text('Example3'),
                 ),
                 Container(
                   decoration: BoxDecoration(
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                   height: 150,
                   width: 150,
                   padding: const EdgeInsets.all(16),
-                  child: const Text('Example'),
+                  child: const Text('Example4'),
                 ),
               ],
             ),
