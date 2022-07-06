@@ -11,7 +11,7 @@ class BlocExample extends StatelessWidget {
         centerTitle: true,
         title: const Text('Bloc Example'),
       ),
-      body: Center(child: Text(args.toString())),
+      body: Center(child: Text(args != null ? args.toString() : "VAZIO")),
     );
   }
 }
