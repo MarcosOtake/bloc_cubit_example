@@ -5,11 +5,13 @@ class BlocExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments;
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Bloc Example'),
       ),
-      body: Container(),
+      body: Center(child: Text(args.toString())),
     );
   }
 }

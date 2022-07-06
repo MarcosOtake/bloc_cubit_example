@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
     final size = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Home'),
       ),
       body: SingleChildScrollView(
@@ -20,56 +21,61 @@ class HomePage extends StatelessWidget {
               spacing: 18,
               runSpacing: 18,
               children: [
-                GestureDetector(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        color: Colors.blue),
-                    alignment: Alignment.center,
-                    height: 150,
-                    width: 150,
-                    padding: const EdgeInsets.all(16),
-                    child: const Text('Example'),
-                  ),
-                  onTap: () {
-                    Navigator.pushNamed(context, "/bloc/example/");
-                  },
+                _BoxCard(
+                  nameBox: "Example1",
+                  color: Colors.amber,
+                  onTap: () => Navigator.pushNamed(context, "/bloc/example/",
+                      arguments: "TESTE DE ARGUMENTOS"),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.amber),
-                  alignment: Alignment.center,
-                  height: 150,
-                  width: 150,
-                  padding: const EdgeInsets.all(16),
-                  child: const Text('Example2'),
+                _BoxCard(
+                  nameBox: "Example2",
+                  color: Colors.brown,
+                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.blueGrey),
-                  alignment: Alignment.center,
-                  height: 150,
-                  width: 150,
-                  padding: const EdgeInsets.all(16),
-                  child: const Text('Example3'),
+                _BoxCard(
+                  nameBox: "Example3",
+                  color: Colors.deepPurple,
+                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.brown),
-                  alignment: Alignment.center,
-                  height: 150,
-                  width: 150,
-                  padding: const EdgeInsets.all(16),
-                  child: const Text('Example4'),
+                _BoxCard(
+                  nameBox: "Example4",
+                  color: Colors.grey,
+                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
                 ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class _BoxCard extends StatelessWidget {
+  String nameBox;
+  Function onTap;
+  Color color;
+  _BoxCard({
+    Key? key,
+    required this.nameBox,
+    required this.onTap,
+    required this.color,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16), color: color),
+        alignment: Alignment.center,
+        height: 150,
+        width: 150,
+        padding: const EdgeInsets.all(16),
+        child: Text(nameBox),
+      ),
+      onTap: () => onTap(),
     );
   }
 }
