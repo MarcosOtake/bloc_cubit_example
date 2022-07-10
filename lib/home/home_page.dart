@@ -22,25 +22,24 @@ class HomePage extends StatelessWidget {
               runSpacing: 18,
               children: [
                 _BoxCard(
-                  nameBox: "Example1",
-                  color: Colors.amber,
-                  onTap: () => Navigator.pushNamed(context, "/bloc/example/",
-                      arguments: "TESTE DE ARGUMENTOS"),
-                ),
+                    nameBox: "Example1",
+                    color: Colors.amber,
+                    nav: "/bloc/example/",
+                    arguments: "TESTE DE ARGUMENTOS"),
                 _BoxCard(
                   nameBox: "Example2",
                   color: Colors.brown,
-                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
+                  nav: "/bloc/example/",
                 ),
                 _BoxCard(
                   nameBox: "Example3",
                   color: Colors.deepPurple,
-                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
+                  nav: "/bloc/example/",
                 ),
                 _BoxCard(
                   nameBox: "Example4",
                   color: Colors.grey,
-                  onTap: () => Navigator.pushNamed(context, "/bloc/example/"),
+                  nav: "/bloc/example/",
                 ),
               ],
             ),
@@ -54,14 +53,16 @@ class HomePage extends StatelessWidget {
 // ignore: must_be_immutable
 class _BoxCard extends StatelessWidget {
   String nameBox;
-  Function onTap;
+  String nav;
   Color color;
-  _BoxCard({
-    Key? key,
-    required this.nameBox,
-    required this.onTap,
-    required this.color,
-  }) : super(key: key);
+  String? arguments;
+  _BoxCard(
+      {Key? key,
+      required this.nameBox,
+      required this.nav,
+      required this.color,
+      this.arguments})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +76,7 @@ class _BoxCard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Text(nameBox),
       ),
-      onTap: () => onTap(),
+      onTap: () => Navigator.pushNamed(context, nav, arguments: arguments),
     );
   }
 }
