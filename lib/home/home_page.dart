@@ -22,22 +22,22 @@ class HomePage extends StatelessWidget {
               runSpacing: 18,
               children: [
                 _BoxCard(
-                    nameBox: "Example1",
+                    nameBox: "Example",
                     color: Colors.amber,
                     nav: "/bloc/example/",
                     arguments: "TESTE DE ARGUMENTOS"),
                 _BoxCard(
-                  nameBox: "Example2",
+                  nameBox: "Example Freezed",
                   color: Colors.brown,
                   nav: "/bloc/example/",
                 ),
                 _BoxCard(
-                  nameBox: "Example3",
+                  nameBox: "Contact",
                   color: Colors.deepPurple,
                   nav: "/bloc/example/",
                 ),
                 _BoxCard(
-                  nameBox: "Example4",
+                  nameBox: "Contact Cubit",
                   color: Colors.grey,
                   nav: "/bloc/example/",
                 ),
@@ -74,7 +74,12 @@ class _BoxCard extends StatelessWidget {
         height: 150,
         width: 150,
         padding: const EdgeInsets.all(16),
-        child: Text(nameBox),
+        child: Text(
+          nameBox,
+          style: const TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       onTap: () => Navigator.pushNamed(context, nav, arguments: arguments),
     );
