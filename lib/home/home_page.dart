@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
                 _BoxCard(
                   nameBox: "Example Freezed",
                   color: Colors.brown,
-                  nav: "/bloc/example/",
+                  nav: "/bloc/example/freezed",
                 ),
                 _BoxCard(
                   nameBox: "Contact",
