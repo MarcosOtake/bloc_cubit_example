@@ -19,7 +19,19 @@ class _$ExampleFreezedStateTearOff {
   const _$ExampleFreezedStateTearOff();
 
   _ExampleFreezedStateInitial initial() {
-    return const _ExampleFreezedStateInitial();
+    return _ExampleFreezedStateInitial();
+  }
+
+  _ExampleFreezedStateLoading loading() {
+    return _ExampleFreezedStateLoading();
+  }
+
+  _ExampleFreezedStateBanner showBanner(
+      {required String message, required List<String> names}) {
+    return _ExampleFreezedStateBanner(
+      message: message,
+      names: names,
+    );
   }
 
   _ExampleFreezedStateData data({required List<String> names}) {
@@ -37,18 +49,24 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message, List<String> names) showBanner,
     required TResult Function(List<String> names) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) =>
@@ -56,18 +74,24 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateBanner value) showBanner,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) =>
@@ -115,7 +139,7 @@ class __$ExampleFreezedStateInitialCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
-  const _$_ExampleFreezedStateInitial();
+  _$_ExampleFreezedStateInitial();
 
   @override
   String toString() {
@@ -136,6 +160,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message, List<String> names) showBanner,
     required TResult Function(List<String> names) data,
   }) {
     return initial();
@@ -145,6 +171,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
   }) {
     return initial?.call();
@@ -154,6 +182,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -167,6 +197,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateBanner value) showBanner,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return initial(this);
@@ -176,6 +208,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
   }) {
     return initial?.call(this);
@@ -185,6 +219,8 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {
@@ -196,7 +232,289 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
 }
 
 abstract class _ExampleFreezedStateInitial implements ExampleFreezedState {
-  const factory _ExampleFreezedStateInitial() = _$_ExampleFreezedStateInitial;
+  factory _ExampleFreezedStateInitial() = _$_ExampleFreezedStateInitial;
+}
+
+/// @nodoc
+abstract class _$ExampleFreezedStateLoadingCopyWith<$Res> {
+  factory _$ExampleFreezedStateLoadingCopyWith(
+          _ExampleFreezedStateLoading value,
+          $Res Function(_ExampleFreezedStateLoading) then) =
+      __$ExampleFreezedStateLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ExampleFreezedStateLoadingCopyWithImpl<$Res>
+    extends _$ExampleFreezedStateCopyWithImpl<$Res>
+    implements _$ExampleFreezedStateLoadingCopyWith<$Res> {
+  __$ExampleFreezedStateLoadingCopyWithImpl(_ExampleFreezedStateLoading _value,
+      $Res Function(_ExampleFreezedStateLoading) _then)
+      : super(_value, (v) => _then(v as _ExampleFreezedStateLoading));
+
+  @override
+  _ExampleFreezedStateLoading get _value =>
+      super._value as _ExampleFreezedStateLoading;
+}
+
+/// @nodoc
+
+class _$_ExampleFreezedStateLoading implements _ExampleFreezedStateLoading {
+  _$_ExampleFreezedStateLoading();
+
+  @override
+  String toString() {
+    return 'ExampleFreezedState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ExampleFreezedStateLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message, List<String> names) showBanner,
+    required TResult Function(List<String> names) data,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
+    TResult Function(List<String> names)? data,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
+    TResult Function(List<String> names)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateBanner value) showBanner,
+    required TResult Function(_ExampleFreezedStateData value) data,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
+    TResult Function(_ExampleFreezedStateData value)? data,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
+    TResult Function(_ExampleFreezedStateData value)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExampleFreezedStateLoading implements ExampleFreezedState {
+  factory _ExampleFreezedStateLoading() = _$_ExampleFreezedStateLoading;
+}
+
+/// @nodoc
+abstract class _$ExampleFreezedStateBannerCopyWith<$Res> {
+  factory _$ExampleFreezedStateBannerCopyWith(_ExampleFreezedStateBanner value,
+          $Res Function(_ExampleFreezedStateBanner) then) =
+      __$ExampleFreezedStateBannerCopyWithImpl<$Res>;
+  $Res call({String message, List<String> names});
+}
+
+/// @nodoc
+class __$ExampleFreezedStateBannerCopyWithImpl<$Res>
+    extends _$ExampleFreezedStateCopyWithImpl<$Res>
+    implements _$ExampleFreezedStateBannerCopyWith<$Res> {
+  __$ExampleFreezedStateBannerCopyWithImpl(_ExampleFreezedStateBanner _value,
+      $Res Function(_ExampleFreezedStateBanner) _then)
+      : super(_value, (v) => _then(v as _ExampleFreezedStateBanner));
+
+  @override
+  _ExampleFreezedStateBanner get _value =>
+      super._value as _ExampleFreezedStateBanner;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? names = freezed,
+  }) {
+    return _then(_ExampleFreezedStateBanner(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      names: names == freezed
+          ? _value.names
+          : names // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ExampleFreezedStateBanner implements _ExampleFreezedStateBanner {
+  _$_ExampleFreezedStateBanner({required this.message, required this.names});
+
+  @override
+  final String message;
+  @override
+  final List<String> names;
+
+  @override
+  String toString() {
+    return 'ExampleFreezedState.showBanner(message: $message, names: $names)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ExampleFreezedStateBanner &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.names, names));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(names));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ExampleFreezedStateBannerCopyWith<_ExampleFreezedStateBanner>
+      get copyWith =>
+          __$ExampleFreezedStateBannerCopyWithImpl<_ExampleFreezedStateBanner>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message, List<String> names) showBanner,
+    required TResult Function(List<String> names) data,
+  }) {
+    return showBanner(message, names);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
+    TResult Function(List<String> names)? data,
+  }) {
+    return showBanner?.call(message, names);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
+    TResult Function(List<String> names)? data,
+    required TResult orElse(),
+  }) {
+    if (showBanner != null) {
+      return showBanner(message, names);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateBanner value) showBanner,
+    required TResult Function(_ExampleFreezedStateData value) data,
+  }) {
+    return showBanner(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
+    TResult Function(_ExampleFreezedStateData value)? data,
+  }) {
+    return showBanner?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
+    TResult Function(_ExampleFreezedStateData value)? data,
+    required TResult orElse(),
+  }) {
+    if (showBanner != null) {
+      return showBanner(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExampleFreezedStateBanner implements ExampleFreezedState {
+  factory _ExampleFreezedStateBanner(
+      {required String message,
+      required List<String> names}) = _$_ExampleFreezedStateBanner;
+
+  String get message;
+  List<String> get names;
+  @JsonKey(ignore: true)
+  _$ExampleFreezedStateBannerCopyWith<_ExampleFreezedStateBanner>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -235,7 +553,7 @@ class __$ExampleFreezedStateDataCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
-  const _$_ExampleFreezedStateData({required this.names});
+  _$_ExampleFreezedStateData({required this.names});
 
   @override
   final List<String> names;
@@ -267,6 +585,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message, List<String> names) showBanner,
     required TResult Function(List<String> names) data,
   }) {
     return data(names);
@@ -276,6 +596,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
   }) {
     return data?.call(names);
@@ -285,6 +607,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message, List<String> names)? showBanner,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -298,6 +622,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateBanner value) showBanner,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return data(this);
@@ -307,6 +633,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
   }) {
     return data?.call(this);
@@ -316,6 +644,8 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateBanner value)? showBanner,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {
@@ -327,7 +657,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
 }
 
 abstract class _ExampleFreezedStateData implements ExampleFreezedState {
-  const factory _ExampleFreezedStateData({required List<String> names}) =
+  factory _ExampleFreezedStateData({required List<String> names}) =
       _$_ExampleFreezedStateData;
 
   List<String> get names;
@@ -341,7 +671,7 @@ class _$ExampleFreezedEventTearOff {
   const _$ExampleFreezedEventTearOff();
 
   _ExampleFreezedEventFindNames findNames() {
-    return const _ExampleFreezedEventFindNames();
+    return _ExampleFreezedEventFindNames();
   }
 
   _ExampleFreezedEventAddName addName(String name) {
@@ -450,7 +780,7 @@ class __$ExampleFreezedEventFindNamesCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ExampleFreezedEventFindNames implements _ExampleFreezedEventFindNames {
-  const _$_ExampleFreezedEventFindNames();
+  _$_ExampleFreezedEventFindNames();
 
   @override
   String toString() {
@@ -537,8 +867,7 @@ class _$_ExampleFreezedEventFindNames implements _ExampleFreezedEventFindNames {
 }
 
 abstract class _ExampleFreezedEventFindNames implements ExampleFreezedEvent {
-  const factory _ExampleFreezedEventFindNames() =
-      _$_ExampleFreezedEventFindNames;
+  factory _ExampleFreezedEventFindNames() = _$_ExampleFreezedEventFindNames;
 }
 
 /// @nodoc
@@ -578,7 +907,7 @@ class __$ExampleFreezedEventAddNameCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ExampleFreezedEventAddName implements _ExampleFreezedEventAddName {
-  const _$_ExampleFreezedEventAddName(this.name);
+  _$_ExampleFreezedEventAddName(this.name);
 
   @override
   final String name;
@@ -676,7 +1005,7 @@ class _$_ExampleFreezedEventAddName implements _ExampleFreezedEventAddName {
 }
 
 abstract class _ExampleFreezedEventAddName implements ExampleFreezedEvent {
-  const factory _ExampleFreezedEventAddName(String name) =
+  factory _ExampleFreezedEventAddName(String name) =
       _$_ExampleFreezedEventAddName;
 
   String get name;
@@ -724,7 +1053,7 @@ class __$ExampleFreezedEventRemoveNameCopyWithImpl<$Res>
 
 class _$_ExampleFreezedEventRemoveName
     implements _ExampleFreezedEventRemoveName {
-  const _$_ExampleFreezedEventRemoveName(this.name);
+  _$_ExampleFreezedEventRemoveName(this.name);
 
   @override
   final String name;
@@ -822,7 +1151,7 @@ class _$_ExampleFreezedEventRemoveName
 }
 
 abstract class _ExampleFreezedEventRemoveName implements ExampleFreezedEvent {
-  const factory _ExampleFreezedEventRemoveName(String name) =
+  factory _ExampleFreezedEventRemoveName(String name) =
       _$_ExampleFreezedEventRemoveName;
 
   String get name;
