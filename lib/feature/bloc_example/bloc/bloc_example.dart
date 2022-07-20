@@ -16,7 +16,6 @@ class BlocExample extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           String newName = "Mais um nome";
-
           context.read<ExampleBloc>().add(ExampleAddNameEvent(name: newName));
         },
         child: const Icon(
@@ -117,19 +116,6 @@ class BlocExample extends StatelessWidget {
                               .add(ExampleRemoveNameEvent(names: name));
                         },
                       ),
-                      // leading: GestureDetector(
-                      //   child: const Icon(
-                      //     Icons.add,
-                      //     color: Colors.green,
-                      //   ),
-                      //   onTap: () {
-                      //     String newName = "Mais um nome ";
-                      //     String plusName = "$newName + ${index + 1}";
-                      //     context
-                      //         .read<ExampleBloc>()
-                      //         .add(ExampleAddNameEvent(name: plusName));
-                      //   },
-                      // ),
                     );
                   },
                 ),
