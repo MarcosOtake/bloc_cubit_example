@@ -34,12 +34,12 @@ class HomePage extends StatelessWidget {
                 _BoxCard(
                   nameBox: "Contact",
                   color: Colors.deepPurple,
-                  nav: "/bloc/example/",
+                  nav: "/contact/list",
                 ),
                 _BoxCard(
                   nameBox: "Contact Cubit",
                   color: Colors.grey,
-                  nav: "/bloc/example/",
+                  nav: "/bloc/cubit",
                 ),
               ],
             ),
