@@ -15,6 +15,8 @@ dependencies:
   flutter_bloc: ^8.0.1 
   cupertino_icons: ^1.0.2
   freezed_annotation: ^1.1.0
+  dartion: ^1.0.7
+  dio: ^4.0.4
 
 
 dev_dependencies:
