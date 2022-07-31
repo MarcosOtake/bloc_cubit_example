@@ -62,3 +62,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  
+  
+  # -------------------Comandos Uteis-------------------
+  # fvm flutter pub run build_runner build
+  # fvm flutter pub run build_runner watch
+  # fvm flutter pub run build_runner build --delete-conflicting-outputs
+  # dartion init
+  # dartion serve
+
