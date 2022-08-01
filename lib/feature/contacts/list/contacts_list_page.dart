@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:project_teste_bloc/feature/contacts/list/bloc/contact_list_bloc.dart';
+import 'package:project_teste_bloc/feature/contacts/list/contact_list_bloc.dart';
 import 'package:project_teste_bloc/models/contact_model.dart';
 import 'package:project_teste_bloc/widgets/loader.dart';
 

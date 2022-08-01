@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_teste_bloc/feature/bloc_example/bloc/bloc_example.dart';
 import 'package:project_teste_bloc/feature/bloc_example/bloc_freezed/bloc_freezed_example.dart';
 import 'package:project_teste_bloc/feature/bloc_example/bloc_freezed/example_freezed_bloc.dart';
-import 'package:project_teste_bloc/feature/contacts/list/bloc/contact_list_bloc.dart';
 import 'package:project_teste_bloc/feature/contacts/list/bloc/register/contact_register_page.dart';
-import 'package:project_teste_bloc/feature/contacts/list/bloc/update/contact_update_page.dart';
+import 'package:project_teste_bloc/feature/contacts/list/contact_list_bloc.dart';
 import 'package:project_teste_bloc/feature/contacts/list/contacts_list_page.dart';
+import 'package:project_teste_bloc/feature/contacts/update/contact_update_page.dart';
 import 'package:project_teste_bloc/repositories/contacts_repository.dart';
 
 import 'feature/bloc_example/bloc/example_bloc.dart';
