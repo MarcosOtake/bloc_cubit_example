@@ -3,7 +3,8 @@ import 'package:project_teste_bloc/models/contact_model.dart';
 
 class ContactsRepository {
   Future<List<ContactModel>> findAll() async {
-    final response = await Dio().get('http://127.0.0.1:3031/contacts');
+    final response = await Dio().get('http://10.0.2.2:3031/contacts');
+    //final response = await Dio().get('http://localhost:3031/contacts'); // IOS
     try {
       // final response = await Dio().get('http://localhost:3031/contacts');
       return response.data
